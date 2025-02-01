@@ -251,3 +251,22 @@ canvas {
       margin-bottom: 20px;
   }
 }
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input[type="number"], button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .grafico-container {
+    width: 180px;
+    height: 180px;
+  }
+}
