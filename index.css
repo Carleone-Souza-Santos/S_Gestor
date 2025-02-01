@@ -1,0 +1,253 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  max-width: 1000px; 
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.formulario {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 15px; 
+}
+
+label {
+  font-size: 14px; 
+  color: #333;
+}
+
+input[type="number"] {
+  padding: 8px; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px; 
+  color: #333;
+  margin-bottom: 12px; 
+}
+
+input[type="number"]:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+button {
+  padding: 10px 16px; 
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004080;
+}
+
+.resultados {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.resultados h3 {
+  font-size: 22px;
+  color: #0056b3;
+  font-weight: bold;
+  text-align: center;
+}
+
+.resultado p {
+  font-size: 16px; 
+  color: #555;
+  margin: 6px 0; 
+}
+
+.resultado span {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.grafico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+}
+
+.participantes-icon {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #0056b3;
+}
+
+.participantes-icon i {
+  margin-right: 8px;
+}
+
+#graficoPizza {
+  border-radius: 50%;
+  border: 5px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+div > div {
+  margin: 8px 0;
+  border-top: 2px dashed #ddd;
+}
+
+#qtdParticipantes {
+  font-size: 18px; 
+  font-weight: bold;
+  color: #0056b3;
+}
+
+#somaGastos, #gastoPorParticipante {
+  font-size: 18px; 
+  color: #ff5722;
+  font-weight: bold;
+}
+
+#taxaRetirada, #resultado {
+  font-size: 18px; 
+  color: #4caf50;
+  font-weight: bold;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+#gastoPorParticipante {
+  font-size: 20px; 
+  color: #ff9800;
+  font-weight: bold;
+  background-color: #684c20;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#Lucro{
+  font-size: 20px; /* Font menor */
+  color: #0fdd08;
+  font-weight: bold;
+  background-color: #142ea1;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+
+}
+
+#gastoPorParticipante:hover {
+  transform: scale(1.05);
+}
+
+
+.grafico-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px; 
+  height: 250px;
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
+  border: 3px solid #ccc; 
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.grafico-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+#graficoPizza {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 86, 179, 0.2); 
+  animation: fadeIn 1s ease-in-out; 
+}
+
+/* Animação de entrada para o gráfico */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .grafico-container {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+  }
+
+  .formulario, .resultados {
+      width: 100%; 
+      margin-bottom: 20px;
+  }
+}

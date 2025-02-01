@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor Financeiro</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Ícone de pessoa -->
+</head>
+<body>
+    <div class="container">
+     
+        <div class="formulario">
+            <h2>Gestor Financeiro</h2>
+            <label for="preco">Valor Total do Curso:</label>
+            <input type="number" id="preco" placeholder="R$" required>
+
+            <label for="taxa">Valor de Entrada (%):</label>
+            <input type="number" id="taxa" placeholder="%" required>
+
+            <label for="transporte">Transporte:</label>
+            <input type="number" id="transporte" placeholder="R$" required>
+
+            <label for="materiais">Materiais Investidos:</label>
+            <input type="number" id="materiais" placeholder="R$" required>
+
+            <label for="cafe">Café da Manhã:</label>
+            <input type="number" id="cafe" placeholder="R$" required>
+
+            <label for="aluguel">Aluguel do Espaço:</label>
+            <input type="number" id="aluguel" placeholder="R$" required>
+
+            <label for="trafegoPago">Valor do Tráfego Pago:</label>
+            <input type="number" id="trafegoPago" placeholder="R$" required>
+
+            <label for="quantidadeParticipantes">Quantidade de Alunos:</label>
+            <input type="number" id="quantidadeParticipantes" min="1" max="10" placeholder="Digite o número de participantes" required>
+
+            <button onclick="calcularTotal()">Calcular</button>
+        </div>
+
+        <div class="resultados">
+            <h3>Resultados:</h3>
+            <div class="resultado">
+                <p style="color:#3680eb">Transporte: <span id="transporteRetirado">R$ 0,00</span></p>
+                <p style="color:#800080">Trafego Pago: <span id="trafegoPagoRetirado">R$ 0,00</span></p>
+                <p style="color:#4caf50">Materiais Investidos: <span id="materiaisRetirados">R$ 0,00</span></p>
+                <p style="color:#8b4513">Café da Manhã: <span id="cafeRetirado">R$ 0,00</span></p>
+                <p style="color:#ff9800">Aluguel do Espaço: <span id="aluguelRetirado">R$ 0,00</span></p>
+                <div></div>
+                <p>Total de Gastos: <span id="somaGastos">R$ 0,00</span></p>
+               
+        
+              
+        <div>
+          <br><br>
+            <i class="fas fa-user"></i>
+            <span id="qtdParticipantes">0</span>
+            <p>Taxa retirada: <span id="taxaRetirada">R$ 0,00</span></p>
+            <p >Falta Receber: <span id="resultado">R$ 0,00</span></p>
+            
+        </div>
+                
+                <!-- Gráfico e ícone de participantes -->
+            <div class="grafico-container">
+                <div class="participantes-icon">
+                </div>
+                <canvas id="graficoPizza"></canvas>
+            </div>
+             
+      <br>
+              <p>Gasto por Participante: <span id="gastoPorParticipante">R$ 0,00</span></p>
+              <br>
+              <p>Lucro: <span id="Lucro">R$ 0,00</span></p>
+          </div>
+        </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>
