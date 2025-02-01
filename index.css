@@ -213,7 +213,7 @@ canvas {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Animação de entrada para o gráfico */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -227,37 +227,33 @@ canvas {
 
 
 
-
-
-/* Ajustes para telas pequenas (até 768px) */
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
     width: 90%;
-    height: 100vh; /* Adiciona altura total da tela */
-    justify-content: space-between; /* Adiciona espaço entre os elementos */
-    padding: 20px 0; /* Adiciona espaçamento vertical */
+    height: 100vh; 
+    justify-content: space-between; 
+    padding: 20px 0; 
   }
 
   .formulario, .resultados {
     width: 100%;
     margin-bottom: 20px;
     padding: 15px;
-    box-sizing: border-box; /* Garante que o padding seja contabilizado corretamente */
+    box-sizing: border-box; 
   }
 
-  /* Esconde o gráfico em telas pequenas */
+ 
   .grafico-container, #graficoPizza {
     display: none;
   }
 
-  /* Ajusta a largura do gráfico em telas pequenas para não aparecer */
+
   #graficoPizza {
     display: none;
   }
 
-  /* Ajustando texto do gráfico e resultados para telas menores */
   .resultados h3 {
     font-size: 18px;
   }
@@ -271,7 +267,7 @@ canvas {
   }
 }
 
-/* Ajustes para telas muito pequenas (até 480px) */
+
 @media screen and (max-width: 480px) {
   h2 {
     font-size: 18px;
@@ -291,7 +287,6 @@ canvas {
     height: 180px;
   }
 
-  /* Esconde o gráfico em telas muito pequenas */
   .grafico-container, #graficoPizza {
     display: none;
   }
