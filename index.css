@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 70%;
-  max-width: 1000px; 
+  max-width: 1000px;
   justify-content: space-between;
   gap: 15px;
 }
@@ -32,7 +31,7 @@ body {
   width: 48%;
   display: flex;
   flex-direction: column;
-  gap: 12px; 
+  gap: 12px;
 }
 
 h2 {
@@ -40,21 +39,21 @@ h2 {
   font-weight: bold;
   color: #0056b3;
   text-align: center;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 label {
-  font-size: 14px; 
+  font-size: 14px;
   color: #333;
 }
 
 input[type="number"] {
-  padding: 8px; 
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 14px; 
+  font-size: 14px;
   color: #333;
-  margin-bottom: 12px; 
+  margin-bottom: 12px;
 }
 
 input[type="number"]:focus {
@@ -63,12 +62,12 @@ input[type="number"]:focus {
 }
 
 button {
-  padding: 10px 16px; 
+  padding: 10px 16px;
   background-color: #0056b3;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 14px; 
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -96,9 +95,9 @@ button:hover {
 }
 
 .resultado p {
-  font-size: 16px; 
+  font-size: 16px;
   color: #555;
-  margin: 6px 0; 
+  margin: 6px 0;
 }
 
 .resultado span {
@@ -110,7 +109,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; 
+  gap: 15px;
 }
 
 .participantes-icon {
@@ -136,19 +135,19 @@ div > div {
 }
 
 #qtdParticipantes {
-  font-size: 18px; 
+  font-size: 18px;
   font-weight: bold;
   color: #0056b3;
 }
 
 #somaGastos, #gastoPorParticipante {
-  font-size: 18px; 
+  font-size: 18px;
   color: #ff5722;
   font-weight: bold;
 }
 
 #taxaRetirada, #resultado {
-  font-size: 18px; 
+  font-size: 18px;
   color: #4caf50;
   font-weight: bold;
 }
@@ -159,7 +158,7 @@ canvas {
 }
 
 #gastoPorParticipante {
-  font-size: 20px; 
+  font-size: 20px;
   color: #ff9800;
   font-weight: bold;
   background-color: #684c20;
@@ -170,8 +169,8 @@ canvas {
   transition: transform 0.3s ease;
 }
 
-#Lucro{
-  font-size: 20px; /* Font menor */
+#Lucro {
+  font-size: 20px;
   color: #0fdd08;
   font-weight: bold;
   background-color: #142ea1;
@@ -180,41 +179,37 @@ canvas {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
-
 }
 
 #gastoPorParticipante:hover {
   transform: scale(1.05);
 }
 
-
 .grafico-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px; 
+  width: 250px;
   height: 250px;
   background: linear-gradient(135deg, #ffffff, #f1f1f1);
-  border: 3px solid #ccc; 
+  border: 3px solid #ccc;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 15px;
   transition: transform 0.3s ease-in-out;
 }
-
 
 .grafico-container:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
 #graficoPizza {
   width: 100% !important;
   height: 100% !important;
   border-radius: 50%;
-  border: 5px solid rgba(0, 86, 179, 0.2); 
-  animation: fadeIn 1s ease-in-out; 
+  border: 5px solid rgba(0, 86, 179, 0.2);
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Animação de entrada para o gráfico */
@@ -229,25 +224,64 @@ canvas {
   }
 }
 
-
-@media screen and (max-width: 768px) {
-  .grafico-container {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-  }
-}
-
-
+/* Ajustes para telas pequenas (até 768px) */
 @media screen and (max-width: 768px) {
   .container {
-      flex-direction: column;
-      align-items: center;
-      width: 90%;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
   }
 
   .formulario, .resultados {
-      width: 100%; 
-      margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+    .grafico-container {
+      width: 80vw;  /* Ajuste a largura para 80% da largura da tela */
+      height: 80vw; /* Ajuste a altura para 80% da largura da tela (mantém proporção) */
+      padding: 10px;
+    }
+  
+    /* Garantir que o gráfico seja responsivo */
+    #graficoPizza {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 300px;  /* Limita a largura máxima */
+      max-height: 300px; /* Limita a altura máxima */
+    }
+  
+  /* Ajustando texto do gráfico e resultados para telas menores */
+  .resultados h3 {
+    font-size: 20px;
+  }
+
+  .resultado p {
+    font-size: 14px;
+  }
+
+  #somaGastos, #gastoPorParticipante, #taxaRetirada, #resultado {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para telas muito pequenas (até 480px) */
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input[type="number"], button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .grafico-container {
+    width: 180px;
+    height: 180px;
   }
 }
