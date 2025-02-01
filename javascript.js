@@ -1,4 +1,4 @@
-// Função para criar o gráfico de pizza
+
 function criarGraficoPizza(gastos) {
   
   const Grafic = document.getElementById("graficoPizza").getContext("2d");
@@ -42,7 +42,6 @@ function criarGraficoPizza(gastos) {
 }
 
 
-
 function calcularTotal() {
     let preco = parseFloat(document.getElementById("preco").value);
     let taxa = parseFloat(document.getElementById("taxa").value);
@@ -53,13 +52,13 @@ function calcularTotal() {
     let trafegoPago = parseFloat(document.getElementById("trafegoPago").value);
     let quantidadeParticipantes = parseInt(document.getElementById("quantidadeParticipantes").value);
   
-    // Verificar se todos os valores são números válidos
+
     if (isNaN(preco) || isNaN(taxa) || isNaN(transporte) || isNaN(materiais) || isNaN(cafe) || isNaN(aluguel) || isNaN(trafegoPago) || isNaN(quantidadeParticipantes)) {
       alert("Por favor, insira apenas números válidos em todos os campos.");
-      return; // Se houver um campo inválido, interrompe a execução da função
+      return; 
     }
   
-    // Definir valores padrão caso o campo seja vazio ou inválido
+    
     preco = preco || 0;
     taxa = taxa || 0;
     transporte = transporte || 0;
@@ -69,26 +68,25 @@ function calcularTotal() {
     trafegoPago = trafegoPago || 0;
     quantidadeParticipantes = quantidadeParticipantes || 1;
   
-    // Calcular o total de gastos antes do tráfego
+
     let somaGastos = transporte + materiais * quantidadeParticipantes + cafe * quantidadeParticipantes + aluguel;
     let somaGastosComTrafego = somaGastos + trafegoPago;
   
-    // Calcular o total pago por todos os participantes
-    let totalPago = preco * quantidadeParticipantes;
   
-    // Calcular a taxa retirada, considerando a taxa por participante
+    let totalPago = preco * quantidadeParticipantes;
+
     let taxaRetirada = ((preco * taxa) / 100) * quantidadeParticipantes;
   
-    // Calcular a falta a receber
+   
     let faltaReceber = totalPago -  taxaRetirada ;
   
-    // Calcular o valor por participante, considerando o tráfego pago
+
     let gastoPorParticipante = somaGastosComTrafego / quantidadeParticipantes;
   
-    // Calcular o lucro
+    
     let lucro = (taxaRetirada + faltaReceber) - somaGastosComTrafego;
   
-    // Exibir os resultados
+
     document.getElementById("transporteRetirado").innerText = `R$ ${transporte.toFixed(2)}`;
     document.getElementById("materiaisRetirados").innerText = `R$ ${(materiais * quantidadeParticipantes).toFixed(2)}`;
     document.getElementById("cafeRetirado").innerText = `R$ ${(cafe * quantidadeParticipantes).toFixed(2)}`;
@@ -101,7 +99,7 @@ function calcularTotal() {
     document.getElementById("Lucro").innerText = `R$ ${lucro.toFixed(2)}`;
     document.getElementById("qtdParticipantes").innerText = quantidadeParticipantes;
   
-    // Gerar gráfico
+
     criarGraficoPizza([transporte, trafegoPago, materiais, cafe, aluguel]);
   }
   
